@@ -1,13 +1,5 @@
 {
   "name": "GEOG581 GEE Notebook",
   "image": "mcr.microsoft.com/devcontainers/python:3.10",
-  "postCreateCommand": "python -m pip install -U pip && pip install -r requirements.txt",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-python.python",
-        "ms-toolsai.jupyter"
-      ]
-    }
-  }
+  "postCreateCommand": "python -m pip install -r requirements.txt && echo 'alias eeauth=\"earthengine authenticate --auth_mode=notebook\"' >> ~/.bashrc"
 }
