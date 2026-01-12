@@ -1,16 +1,8 @@
 {
-  "name": "GEOG581 GEE",
+  "name": "GEOG581",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
-  "postCreateCommand": "python -m pip install -U pip && pip install -r requirements.txt && if [ -x \"$HOME/google-cloud-sdk/bin/gcloud\" ]; then sudo ln -sf \"$HOME/google-cloud-sdk/bin/gcloud\" /usr/local/bin/gcloud; fi",
+  "postCreateCommand": "python -m pip install -r requirements.txt",
   "remoteEnv": {
-    "PATH": "/usr/local/bin:${containerEnv:PATH}"
-  },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-python.python",
-        "ms-toolsai.jupyter"
-      ]
-    }
+    "PATH": "/home/vscode/google-cloud-sdk/bin:${containerEnv:PATH}"
   }
 }
