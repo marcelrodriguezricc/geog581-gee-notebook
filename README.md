@@ -3,7 +3,7 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Python](https://img.shields.io/badge/python-3.10-blue)
 
-This repository provides a lightweight Python/Jupyter notebook environment for coursework in **GEOG 581: Satellite Image Analysis**.
+This repository provides a Python/Jupyter notebook environment for coursework in **GEOG 581: Satellite Image Analysis**.
 
 ## Setup
 ```bash
