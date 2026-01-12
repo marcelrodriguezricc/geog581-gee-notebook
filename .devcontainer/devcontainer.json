@@ -1,8 +1,13 @@
 {
-  "name": "GEOG581",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12",
-  "postCreateCommand": "python -m pip install -r requirements.txt",
-  "remoteEnv": {
-    "PATH": "/home/vscode/google-cloud-sdk/bin:${containerEnv:PATH}"
+  "name": "GEOG581 GEE Notebook",
+  "image": "mcr.microsoft.com/devcontainers/python:3.10",
+  "postCreateCommand": "python -m pip install -U pip && pip install -r requirements.txt",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
+    }
   }
 }
