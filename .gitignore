@@ -1,0 +1,48 @@
+# -------------------------
+# Python virtual environment
+# -------------------------
+venv/
+.env/
+
+# -------------------------
+# Python cache / build artifacts
+# -------------------------
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+
+# -------------------------
+# Jupyter Notebook artifacts
+# -------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# -------------------------
+# VS Code
+# -------------------------
+.vscode/
+.history/
+
+# -------------------------
+# OS-specific
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# Logs / temp files
+# -------------------------
+*.log
+*.tmp
+
+# -------------------------
+# Credentials / secrets
+# -------------------------
+*.json
+*.key
+*.pem
+
+# (keep requirements.txt tracked!)
