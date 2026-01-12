@@ -41,7 +41,7 @@ Thumbs.db
 # -------------------------
 # Credentials / secrets
 # -------------------------
-*.json
+# *.json
 *.key
 *.pem
 
