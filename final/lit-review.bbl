@@ -1,0 +1,1018 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{koo2021}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=b95641e7188ea0d5cd6601e9a7fd361e}{%
+           family={Koo},
+           familyi={K\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ae0426ede5160de73b69701588443a78}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=fa4ce5c78a2c23ba8f719bd651d9afa4}{%
+           family={Ackley},
+           familyi={A\bibinitperiod},
+           given={S.\bibnamedelimi F.},
+           giveni={S\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=b51cecf4342f20f8ec6fb7916ff1973c}{%
+           family={Mestas-Nuñez},
+           familyi={M\bibinithyphendelim N\bibinitperiod},
+           given={A.\bibnamedelimi M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=05736b85749bf4c9d0641e2d375a8ef6}{%
+           family={Macdonald},
+           familyi={M\bibinitperiod},
+           given={G.\bibnamedelimi J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=5e3ebd054f97be321d8feab211848f6f}{%
+           family={Hyun},
+           familyi={H\bibinitperiod},
+           given={C.-U.},
+           giveni={C\bibinithyphendelim U\bibinitperiod}}}%
+      }
+      \strng{namehash}{b346fd3447edafa0c008b3421799bedc}
+      \strng{fullhash}{1d8035b61f7fb9823183b7b5b9db2233}
+      \strng{fullhashraw}{1d8035b61f7fb9823183b7b5b9db2233}
+      \strng{bibnamehash}{1d8035b61f7fb9823183b7b5b9db2233}
+      \strng{authorbibnamehash}{1d8035b61f7fb9823183b7b5b9db2233}
+      \strng{authornamehash}{b346fd3447edafa0c008b3421799bedc}
+      \strng{authorfullhash}{1d8035b61f7fb9823183b7b5b9db2233}
+      \strng{authorfullhashraw}{1d8035b61f7fb9823183b7b5b9db2233}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Cryosphere}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{Semi-Automated Tracking of Iceberg {B43} Using {Sentinel-1} {SAR} Images via {Google Earth Engine}}
+      \field{volume}{15}
+      \field{year}{2021}
+      \field{pages}{4727\bibrangedash 4744}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.5194/tc-15-4727-2021
+      \endverb
+    \endentry
+    \entry{koo2023}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=b95641e7188ea0d5cd6601e9a7fd361e}{%
+           family={Koo},
+           familyi={K\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ae0426ede5160de73b69701588443a78}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c47a3e330d8cf4281e037084985eab3f}{%
+           family={Mahmoud},
+           familyi={M\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=21507a35ea2390afc8c18890ef5524bd}{%
+           family={Iqrah},
+           familyi={I\bibinitperiod},
+           given={J.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=fa4ce5c78a2c23ba8f719bd651d9afa4}{%
+           family={Ackley},
+           familyi={A\bibinitperiod},
+           given={S.\bibnamedelimi F.},
+           giveni={S\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{b346fd3447edafa0c008b3421799bedc}
+      \strng{fullhash}{0f41cd2db2b70c32b928dffa5eeac1db}
+      \strng{fullhashraw}{0f41cd2db2b70c32b928dffa5eeac1db}
+      \strng{bibnamehash}{0f41cd2db2b70c32b928dffa5eeac1db}
+      \strng{authorbibnamehash}{0f41cd2db2b70c32b928dffa5eeac1db}
+      \strng{authornamehash}{b346fd3447edafa0c008b3421799bedc}
+      \strng{authorfullhash}{0f41cd2db2b70c32b928dffa5eeac1db}
+      \strng{authorfullhashraw}{0f41cd2db2b70c32b928dffa5eeac1db}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Remote Sensing of Environment}
+      \field{month}{10}
+      \field{title}{Automated Detection and Tracking of Medium-Large Icebergs from {Sentinel-1} Imagery Using {Google Earth Engine}}
+      \field{volume}{296}
+      \field{year}{2023}
+      \field{pages}{113731}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.rse.2023.113731
+      \endverb
+    \endentry
+    \entry{otosaka2023}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=4da694ff19eef61c6b24963aa0efcb62}{%
+           family={Otosaka},
+           familyi={O\bibinitperiod},
+           given={I.\bibnamedelimi N.},
+           giveni={I\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=564b60d334e18f44dc8ffc77b20816d1}{%
+           family={Horwath},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c45112c121bf80664ce19f877a3c6072}{%
+           family={Mottram},
+           familyi={M\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7113849f8fada1adf1252a9acf03c3c6}{%
+           family={Nowicki},
+           familyi={N\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{4bcad567049440bb4c2c405f1b949d36}
+      \strng{fullhash}{22a386ed1dc40857d223b9645e70b0e4}
+      \strng{fullhashraw}{22a386ed1dc40857d223b9645e70b0e4}
+      \strng{bibnamehash}{22a386ed1dc40857d223b9645e70b0e4}
+      \strng{authorbibnamehash}{22a386ed1dc40857d223b9645e70b0e4}
+      \strng{authornamehash}{4bcad567049440bb4c2c405f1b949d36}
+      \strng{authorfullhash}{22a386ed1dc40857d223b9645e70b0e4}
+      \strng{authorfullhashraw}{22a386ed1dc40857d223b9645e70b0e4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Surveys in Geophysics}
+      \field{month}{10}
+      \field{number}{5}
+      \field{title}{Mass Balances of the Antarctic and Greenland Ice Sheets Monitored from Space}
+      \field{volume}{44}
+      \field{year}{2023}
+      \field{pages}{1615\bibrangedash 1652}
+      \range{pages}{38}
+      \verb{doi}
+      \verb 10.1007/s10712-023-09795-8
+      \endverb
+    \endentry
+    \entry{fisser2025}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=79cb110581784c5229ce97ff3b504486}{%
+           family={Fisser},
+           familyi={F\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=1e615bc2356baa1f53066171d0417c2e}{%
+           family={Doulgeris},
+           familyi={D\bibinitperiod},
+           given={A.\bibnamedelimi P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=54d1ab9e330e072a4f5cb5635eda3f89}{%
+           family={Dierking},
+           familyi={D\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{6fad0ca8f6d9631f4f21c8df166c8ed3}
+      \strng{fullhash}{426392ca558fa60771d1268e1a0b6976}
+      \strng{fullhashraw}{426392ca558fa60771d1268e1a0b6976}
+      \strng{bibnamehash}{426392ca558fa60771d1268e1a0b6976}
+      \strng{authorbibnamehash}{426392ca558fa60771d1268e1a0b6976}
+      \strng{authornamehash}{6fad0ca8f6d9631f4f21c8df166c8ed3}
+      \strng{authorfullhash}{426392ca558fa60771d1268e1a0b6976}
+      \strng{authorfullhashraw}{426392ca558fa60771d1268e1a0b6976}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Remote Sensing of Environment}
+      \field{month}{12}
+      \field{title}{Backscatter-Sensitive Retrieval of Iceberg Areas from {Sentinel-1} Extra Wide Swath {SAR} Data}
+      \field{volume}{331}
+      \field{year}{2025}
+      \field{pages}{115042}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.rse.2025.115042
+      \endverb
+    \endentry
+    \entry{long_icebergs_2002}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=05c9baf31eaf4b85c0da519aad8b79bb}{%
+           family={Long},
+           familyi={L\bibinitperiod},
+           given={D.\bibnamedelimi G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=3b711dff4edc5f6f9bfd059ab6fd62d2}{%
+           family={Ballantyne},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=815d16949a58c59b53a380256bf59168}{%
+           family={Bertoia},
+           familyi={B\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{e003030a871dd5079b2a1962de565789}
+      \strng{fullhash}{670c2812d9f156a1cc65ea3a69ca9896}
+      \strng{fullhashraw}{670c2812d9f156a1cc65ea3a69ca9896}
+      \strng{bibnamehash}{670c2812d9f156a1cc65ea3a69ca9896}
+      \strng{authorbibnamehash}{670c2812d9f156a1cc65ea3a69ca9896}
+      \strng{authornamehash}{e003030a871dd5079b2a1962de565789}
+      \strng{authorfullhash}{670c2812d9f156a1cc65ea3a69ca9896}
+      \strng{authorfullhashraw}{670c2812d9f156a1cc65ea3a69ca9896}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Eos, Transactions American Geophysical Union}
+      \field{number}{42}
+      \field{title}{Is the Number of Antarctic Icebergs Really Increasing?}
+      \field{volume}{83}
+      \field{year}{2002}
+      \field{pages}{469\bibrangedash 474}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1029/2002EO000330
+      \endverb
+    \endentry
+    \entry{karvonen_etal_2021}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=be81c0fe82205c056e015fd8e89179eb}{%
+           family={Karvonen},
+           familyi={K\bibinitperiod},
+           given={Juha},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3e80d4d5e34821ff6dd0cf9e4403b6f6}{%
+           family={Gegiuc},
+           familyi={G\bibinitperiod},
+           given={Alexandru},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bda33fde3849df4531a92dcd7c18f3bd}{%
+           family={Niskanen},
+           familyi={N\bibinitperiod},
+           given={Tuomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=499712b7708fe2b4b720359738075125}{%
+           family={Montonen},
+           familyi={M\bibinitperiod},
+           given={Anni},
+           giveni={A\bibinitperiod}}}%
+        {{hash=30143e1266f5e7216f1f0421c11543c1}{%
+           family={Buus-Hinkler},
+           familyi={B\bibinithyphendelim H\bibinitperiod},
+           given={J{ø}rgen},
+           giveni={J\bibinitperiod}}}%
+        {{hash=161f15213473b3e4731b895d9fe00216}{%
+           family={Rinne},
+           familyi={R\bibinitperiod},
+           given={Eero},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{39dcfe6d97a73be3264b69764372e315}
+      \strng{fullhash}{58b1365200bd269b91d38f04a60e3576}
+      \strng{fullhashraw}{58b1365200bd269b91d38f04a60e3576}
+      \strng{bibnamehash}{58b1365200bd269b91d38f04a60e3576}
+      \strng{authorbibnamehash}{58b1365200bd269b91d38f04a60e3576}
+      \strng{authornamehash}{39dcfe6d97a73be3264b69764372e315}
+      \strng{authorfullhash}{58b1365200bd269b91d38f04a60e3576}
+      \strng{authorfullhashraw}{58b1365200bd269b91d38f04a60e3576}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Geoscience and Remote Sensing}
+      \field{note}{Art. no. 9406184}
+      \field{title}{Iceberg Detection in Dual-Polarized {C}-Band {SAR} Imagery by Segmentation and Nonparametric {CFAR} ({SnP-CFAR})}
+      \field{volume}{60}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/TGRS.2021.3072692
+      \endverb
+    \endentry
+    \entry{hollingshead_antarctic_icebergs}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=91da39d05f513c917bca2a91acb39871}{%
+           family={Hollingshead},
+           familyi={H\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Brigham Young University News}%
+      }
+      \strng{namehash}{91da39d05f513c917bca2a91acb39871}
+      \strng{fullhash}{91da39d05f513c917bca2a91acb39871}
+      \strng{fullhashraw}{91da39d05f513c917bca2a91acb39871}
+      \strng{bibnamehash}{91da39d05f513c917bca2a91acb39871}
+      \strng{authorbibnamehash}{91da39d05f513c917bca2a91acb39871}
+      \strng{authornamehash}{91da39d05f513c917bca2a91acb39871}
+      \strng{authorfullhash}{91da39d05f513c917bca2a91acb39871}
+      \strng{authorfullhashraw}{91da39d05f513c917bca2a91acb39871}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Mar. 17, 2026}
+      \field{title}{Antarctic Icebergs Still Exist Today Where 1700-Era Sailors Spotted, Tracked Them}
+      \field{urlday}{17}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://news.byu.edu/antarctic-icebergs-still-exist-today-where-1700-era-sailors-spotted-tracked-them
+      \endverb
+      \verb{url}
+      \verb https://news.byu.edu/antarctic-icebergs-still-exist-today-where-1700-era-sailors-spotted-tracked-them
+      \endverb
+    \endentry
+    \entry{budge_long_2017}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=31cd75236629e4d6e21da2a3897f62c1}{%
+           family={Budge},
+           familyi={B\bibinitperiod},
+           given={J.\bibnamedelimi S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=05c9baf31eaf4b85c0da519aad8b79bb}{%
+           family={Long},
+           familyi={L\bibinitperiod},
+           given={D.\bibnamedelimi G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{dd4afae3a1c0fe7710558aa1138920aa}
+      \strng{fullhash}{dd4afae3a1c0fe7710558aa1138920aa}
+      \strng{fullhashraw}{dd4afae3a1c0fe7710558aa1138920aa}
+      \strng{bibnamehash}{dd4afae3a1c0fe7710558aa1138920aa}
+      \strng{authorbibnamehash}{dd4afae3a1c0fe7710558aa1138920aa}
+      \strng{authornamehash}{dd4afae3a1c0fe7710558aa1138920aa}
+      \strng{authorfullhash}{dd4afae3a1c0fe7710558aa1138920aa}
+      \strng{authorfullhashraw}{dd4afae3a1c0fe7710558aa1138920aa}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Journal of Selected Topics in Applied Earth Observations}
+      \field{number}{2}
+      \field{title}{A Comprehensive Database for Antarctic Iceberg Tracking Using Scatterometer Data}
+      \field{volume}{11}
+      \field{year}{2017}
+      \verb{doi}
+      \verb 10.1109/JSTARS.2017.2784186
+      \endverb
+    \endentry
+    \entry{carsey_etal_1986}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=961dc2a3c93a9241d01516467fce667f}{%
+           family={Carsey},
+           familyi={C\bibinitperiod},
+           given={F.\bibnamedelimi D.},
+           giveni={F\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=4efb6b247d6e57154e02c52b49597851}{%
+           family={Holt},
+           familyi={H\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=a22e86c8cc1280bcab65ea7258adfa03}{%
+           family={Martin},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d16409604230305926c22f79abf579fc}{%
+           family={McNutt},
+           familyi={M\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f07bd5c653119d95576b891bc468eca6}{%
+           family={Rothrock},
+           familyi={R\bibinitperiod},
+           given={D.\bibnamedelimi A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=29c3965a1c00fd275cb25b39ab23a4ce}{%
+           family={Squire},
+           familyi={S\bibinitperiod},
+           given={V.\bibnamedelimi A.},
+           giveni={V\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=d609285f6acd300af2045e0025410215}{%
+           family={Weeks},
+           familyi={W\bibinitperiod},
+           given={W.\bibnamedelimi F.},
+           giveni={W\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{3313d0b162560935d3c0fa22f7f68673}
+      \strng{fullhash}{775e076e1746088932933fa65e4e30bb}
+      \strng{fullhashraw}{775e076e1746088932933fa65e4e30bb}
+      \strng{bibnamehash}{3313d0b162560935d3c0fa22f7f68673}
+      \strng{authorbibnamehash}{3313d0b162560935d3c0fa22f7f68673}
+      \strng{authornamehash}{3313d0b162560935d3c0fa22f7f68673}
+      \strng{authorfullhash}{775e076e1746088932933fa65e4e30bb}
+      \strng{authorfullhashraw}{775e076e1746088932933fa65e4e30bb}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geophysical Research: Oceans}
+      \field{number}{C3}
+      \field{title}{{Weddell--Scotia} Sea Marginal Ice Zone Observations from Space, {October} 1984}
+      \field{volume}{91}
+      \field{year}{1986}
+      \field{pages}{3920\bibrangedash 3928}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1029/JC091iC03p03920
+      \endverb
+    \endentry
+    \entry{willis_etal_1996}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=92bdcc3ba3608478b73a2722d12c6060}{%
+           family={Willis},
+           familyi={W\bibinitperiod},
+           given={C.\bibnamedelimi J.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=acafe18cf52a54914dc263ddf3d78dd4}{%
+           family={Macklin},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi T.},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=5cc87161ce8854f77e08680929fcb3c2}{%
+           family={Partington},
+           familyi={P\bibinitperiod},
+           given={K.\bibnamedelimi C.},
+           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=0522f423894e63450979bb44c59155d0}{%
+           family={Teleki},
+           familyi={T\bibinitperiod},
+           given={K.\bibnamedelimi A.},
+           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=e418583f72f0f85d96d83b0ca2ba1642}{%
+           family={Rees},
+           familyi={R\bibinitperiod},
+           given={W.\bibnamedelimi G.},
+           giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=db1c36f602462d61f38f83e08e385f0d}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={R.\bibnamedelimi G.},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2eae309fd23ddb231be413991cfec98}
+      \strng{fullhash}{9d74c6d4b5c0952d9890b7777732bbde}
+      \strng{fullhashraw}{9d74c6d4b5c0952d9890b7777732bbde}
+      \strng{bibnamehash}{9d74c6d4b5c0952d9890b7777732bbde}
+      \strng{authorbibnamehash}{9d74c6d4b5c0952d9890b7777732bbde}
+      \strng{authornamehash}{a2eae309fd23ddb231be413991cfec98}
+      \strng{authorfullhash}{9d74c6d4b5c0952d9890b7777732bbde}
+      \strng{authorfullhashraw}{9d74c6d4b5c0952d9890b7777732bbde}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Remote Sensing}
+      \field{number}{9}
+      \field{title}{Iceberg Detection Using {ERS-1} Synthetic Aperture Radar}
+      \field{volume}{17}
+      \field{year}{1996}
+      \field{pages}{1777\bibrangedash 1795}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1080/01431169608948739
+      \endverb
+    \endentry
+    \entry{young_etal_1998}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=949b121e0d31be0969ab4ab4275efa34}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={N.\bibnamedelimi W.},
+           giveni={N\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=aafa3e6ce47253db2e83fc7a2c3ae828}{%
+           family={Turner},
+           familyi={T\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d7acd3f64c425c9fd8c777e172889bbb}{%
+           family={Hyland},
+           familyi={H\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=71dbd08b060a8dd1924c8af48f1354e0}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={R.\bibnamedelimi N.},
+           giveni={R\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \strng{namehash}{9404e531812ff435cdd3c04152365b70}
+      \strng{fullhash}{d6c69a93608c7e61620fc2ab1c68479c}
+      \strng{fullhashraw}{d6c69a93608c7e61620fc2ab1c68479c}
+      \strng{bibnamehash}{d6c69a93608c7e61620fc2ab1c68479c}
+      \strng{authorbibnamehash}{d6c69a93608c7e61620fc2ab1c68479c}
+      \strng{authornamehash}{9404e531812ff435cdd3c04152365b70}
+      \strng{authorfullhash}{d6c69a93608c7e61620fc2ab1c68479c}
+      \strng{authorfullhashraw}{d6c69a93608c7e61620fc2ab1c68479c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Glaciology}
+      \field{title}{Near-Coastal Iceberg Distributions in East {Antarctica}, 50--145°~{E}}
+      \field{volume}{27}
+      \field{year}{1998}
+      \field{pages}{68\bibrangedash 74}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.3189/1998AoG27-1-68-74
+      \endverb
+    \endentry
+    \entry{power_etal_2001}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=b1f45245fc0bb1c129ad31664d5ed144}{%
+           family={Power},
+           familyi={P\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ab8459953fd042f45c3b9cf22fa1e05d}{%
+           family={Youden},
+           familyi={Y\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9489eda261c9be0d0f85ecb4d602e230}{%
+           family={Lane},
+           familyi={L\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=d2532179998c827dfa8bd5c1b3d0e916}{%
+           family={Randell},
+           familyi={R\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4543ee530ec251106c5b1afdb36d9e8b}{%
+           family={Flett},
+           familyi={F\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{4ce662a768acad51575a8cf7927ee442}
+      \strng{fullhash}{0d7a1df8761537de603957b68da2f207}
+      \strng{fullhashraw}{0d7a1df8761537de603957b68da2f207}
+      \strng{bibnamehash}{0d7a1df8761537de603957b68da2f207}
+      \strng{authorbibnamehash}{0d7a1df8761537de603957b68da2f207}
+      \strng{authornamehash}{4ce662a768acad51575a8cf7927ee442}
+      \strng{authorfullhash}{0d7a1df8761537de603957b68da2f207}
+      \strng{authorfullhashraw}{0d7a1df8761537de603957b68da2f207}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Canadian Journal of Remote Sensing}
+      \field{number}{5}
+      \field{title}{Iceberg Detection Capabilities of {RADARSAT} Synthetic Aperture Radar}
+      \field{volume}{27}
+      \field{year}{2001}
+      \field{pages}{476\bibrangedash 486}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1080/07038992.2001.10854888
+      \endverb
+    \endentry
+    \entry{gill_2001}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=9189ef7f7fe4c19135ae9b7589c8dc4c}{%
+           family={Gill},
+           familyi={G\bibinitperiod},
+           given={R.\bibnamedelimi S.},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{9189ef7f7fe4c19135ae9b7589c8dc4c}
+      \strng{fullhash}{9189ef7f7fe4c19135ae9b7589c8dc4c}
+      \strng{fullhashraw}{9189ef7f7fe4c19135ae9b7589c8dc4c}
+      \strng{bibnamehash}{9189ef7f7fe4c19135ae9b7589c8dc4c}
+      \strng{authorbibnamehash}{9189ef7f7fe4c19135ae9b7589c8dc4c}
+      \strng{authornamehash}{9189ef7f7fe4c19135ae9b7589c8dc4c}
+      \strng{authorfullhash}{9189ef7f7fe4c19135ae9b7589c8dc4c}
+      \strng{authorfullhashraw}{9189ef7f7fe4c19135ae9b7589c8dc4c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Canadian Journal of Remote Sensing}
+      \field{number}{5}
+      \field{title}{Operational Detection of Sea Ice Edges and Icebergs Using {SAR}}
+      \field{volume}{27}
+      \field{year}{2001}
+      \field{pages}{411\bibrangedash 432}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1080/07038992.2001.10854885
+      \endverb
+    \endentry
+    \entry{gladstone_bigg_2002}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=8fd00464c47c36b1a6b091a677ea16c1}{%
+           family={Gladstone},
+           familyi={G\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=f9be436c4f5b89b18aaf596c9084d63d}{%
+           family={Bigg},
+           familyi={B\bibinitperiod},
+           given={G.\bibnamedelimi R.},
+           giveni={G\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{fbf5a1eae72267b76474a9fc73e5ee53}
+      \strng{fullhash}{fbf5a1eae72267b76474a9fc73e5ee53}
+      \strng{fullhashraw}{fbf5a1eae72267b76474a9fc73e5ee53}
+      \strng{bibnamehash}{fbf5a1eae72267b76474a9fc73e5ee53}
+      \strng{authorbibnamehash}{fbf5a1eae72267b76474a9fc73e5ee53}
+      \strng{authornamehash}{fbf5a1eae72267b76474a9fc73e5ee53}
+      \strng{authorfullhash}{fbf5a1eae72267b76474a9fc73e5ee53}
+      \strng{authorfullhashraw}{fbf5a1eae72267b76474a9fc73e5ee53}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Antarctic Science}
+      \field{number}{3}
+      \field{title}{Satellite Tracking of Icebergs in the {Weddell Sea}}
+      \field{volume}{14}
+      \field{year}{2002}
+      \field{pages}{278\bibrangedash 287}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1017/S0954102002000032
+      \endverb
+    \endentry
+    \entry{braakmann_folgmann_etal_2023}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=168514704f3e1bdc0a5030741459ef87}{%
+           family={Braakmann-Folgmann},
+           familyi={B\bibinithyphendelim F\bibinitperiod},
+           given={Anne},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6e831227aa9f60f5f2a5c1d02143c795}{%
+           family={Shepherd},
+           familyi={S\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=644e4aab281bb5f457dea5ec6eb46ec8}{%
+           family={Hogg},
+           familyi={H\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=e4e2d0867f93a318dec8bc8a410b4b9a}{%
+           family={Redmond},
+           familyi={R\bibinitperiod},
+           given={Ella},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{e5abcbb825a8162f7a66792062c154e1}
+      \strng{fullhash}{e7739f01b23c722a16d42cd49f9ef4e1}
+      \strng{fullhashraw}{e7739f01b23c722a16d42cd49f9ef4e1}
+      \strng{bibnamehash}{e7739f01b23c722a16d42cd49f9ef4e1}
+      \strng{authorbibnamehash}{e7739f01b23c722a16d42cd49f9ef4e1}
+      \strng{authornamehash}{e5abcbb825a8162f7a66792062c154e1}
+      \strng{authorfullhash}{e7739f01b23c722a16d42cd49f9ef4e1}
+      \strng{authorfullhashraw}{e7739f01b23c722a16d42cd49f9ef4e1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Cryosphere}
+      \field{number}{11}
+      \field{title}{Mapping the Extent of Giant {Antarctic} Icebergs with Deep Learning}
+      \field{volume}{17}
+      \field{year}{2023}
+      \field{pages}{4675\bibrangedash 4690}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.5194/tc-17-4675-2023
+      \endverb
+    \endentry
+    \entry{barbat_etal_2021}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=78640866654706b4fae11b6395483bd1}{%
+           family={Barbat},
+           familyi={B\bibinitperiod},
+           given={Mauro\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=d0927cd70836aa798cd7015666e394bf}{%
+           family={Rackow},
+           familyi={R\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=77160da8212b21d53cbce226904b412e}{%
+           family={Wesche},
+           familyi={W\bibinitperiod},
+           given={Christine},
+           giveni={C\bibinitperiod}}}%
+        {{hash=91f256048ffb50870d9250aa97ff15a8}{%
+           family={Hellmer},
+           familyi={H\bibinitperiod},
+           given={Hartmut\bibnamedelima H.},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=cb89326666ac47aa0c3798b4c45e76d3}{%
+           family={Mata},
+           familyi={M\bibinitperiod},
+           given={Mauricio\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{24a543256525ffb5a55e0a082904d891}
+      \strng{fullhash}{208205c6b0e32dd13b84cef988f91f83}
+      \strng{fullhashraw}{208205c6b0e32dd13b84cef988f91f83}
+      \strng{bibnamehash}{208205c6b0e32dd13b84cef988f91f83}
+      \strng{authorbibnamehash}{208205c6b0e32dd13b84cef988f91f83}
+      \strng{authornamehash}{24a543256525ffb5a55e0a082904d891}
+      \strng{authorfullhash}{208205c6b0e32dd13b84cef988f91f83}
+      \strng{authorfullhashraw}{208205c6b0e32dd13b84cef988f91f83}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ISPRS Journal of Photogrammetry and Remote Sensing}
+      \field{title}{Automated Iceberg Tracking with a Machine Learning Approach Applied to {SAR} Imagery: {A} {Weddell Sea} Case Study}
+      \field{volume}{172}
+      \field{year}{2021}
+      \field{pages}{189\bibrangedash 206}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1016/j.isprsjprs.2020.12.006
+      \endverb
+    \endentry
+    \entry{evans_etal_2023}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=f7010331f1617751e56fa57b308499de}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod}}}%
+        {{hash=af33c0b16ce9ee49c51962c49f162774}{%
+           family={Faul},
+           familyi={F\bibinitperiod},
+           given={Anita},
+           giveni={A\bibinitperiod}}}%
+        {{hash=cc176e1f0c311af4c82259856b6889aa}{%
+           family={Fleming},
+           familyi={F\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=eebe1a6cd344bf1d275105bbb03a1e7f}{%
+           family={Vaughan},
+           familyi={V\bibinitperiod},
+           given={David\bibnamedelima G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=1dbc9272dd93e561c504d8e16585cb58}{%
+           family={Hosking},
+           familyi={H\bibinitperiod},
+           given={J.\bibnamedelimi Scott},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{d5905bd4c2ef7b0274207af61dd6888a}
+      \strng{fullhash}{f7de6c0ae136e95d5864fae083816186}
+      \strng{fullhashraw}{f7de6c0ae136e95d5864fae083816186}
+      \strng{bibnamehash}{f7de6c0ae136e95d5864fae083816186}
+      \strng{authorbibnamehash}{f7de6c0ae136e95d5864fae083816186}
+      \strng{authornamehash}{d5905bd4c2ef7b0274207af61dd6888a}
+      \strng{authorfullhash}{f7de6c0ae136e95d5864fae083816186}
+      \strng{authorfullhashraw}{f7de6c0ae136e95d5864fae083816186}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Remote Sensing of Environment}
+      \field{title}{Unsupervised Machine Learning Detection of Iceberg Populations Within Sea Ice from Dual-Polarisation {SAR} Imagery}
+      \field{volume}{297}
+      \field{year}{2023}
+      \field{pages}{113780}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.rse.2023.113780
+      \endverb
+    \endentry
+    \entry{mazur_amundsen_2017}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=ff6b389b0d7bbfbbe0bd71005190c980}{%
+           family={Mazur},
+           familyi={M\bibinitperiod},
+           given={A.\bibnamedelimi K.},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=2871df2ad20f7902d32df00f10aa4a31}{%
+           family={Wåhlin},
+           familyi={W\bibinitperiod},
+           given={A.\bibnamedelimi K.},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=59ef4b81cf850cc5b3705c1814e9c428}{%
+           family={Krężel},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a54648ec7c7f7a6b2759027885e0a7b2}
+      \strng{fullhash}{575f9a542ff2f17ff2d6310cec7e212b}
+      \strng{fullhashraw}{575f9a542ff2f17ff2d6310cec7e212b}
+      \strng{bibnamehash}{575f9a542ff2f17ff2d6310cec7e212b}
+      \strng{authorbibnamehash}{575f9a542ff2f17ff2d6310cec7e212b}
+      \strng{authornamehash}{a54648ec7c7f7a6b2759027885e0a7b2}
+      \strng{authorfullhash}{575f9a542ff2f17ff2d6310cec7e212b}
+      \strng{authorfullhashraw}{575f9a542ff2f17ff2d6310cec7e212b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Remote Sensing of Environment}
+      \field{title}{An Object-Based {SAR} Image Iceberg Detection Algorithm Applied to the {Amundsen Sea}}
+      \field{volume}{189}
+      \field{year}{2017}
+      \field{pages}{67\bibrangedash 83}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1016/j.rse.2016.11.013
+      \endverb
+    \endentry
+    \entry{heiselberg_etal_2022}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=c2608ebf12f72dfe23774e4aa369e412}{%
+           family={Heiselberg},
+           familyi={H\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=9a4df0bcedac6a5738b5bbcc6ee7f5b1}{%
+           family={S{ø}rensen},
+           familyi={S\bibinitperiod},
+           given={K.\bibnamedelimi A.},
+           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=01896736d909dc252dbdfd10f2c03e76}{%
+           family={Heiselberg},
+           familyi={H\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c41851f726f60800f91b615e46d17d2e}{%
+           family={Andersen},
+           familyi={A\bibinitperiod},
+           given={O.\bibnamedelimi B.},
+           giveni={O\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{7150aa04d4646a0a7e198a9e8750b0a7}
+      \strng{fullhash}{6c9f2a37b66870051a81566ff0d0b9c3}
+      \strng{fullhashraw}{6c9f2a37b66870051a81566ff0d0b9c3}
+      \strng{bibnamehash}{6c9f2a37b66870051a81566ff0d0b9c3}
+      \strng{authorbibnamehash}{6c9f2a37b66870051a81566ff0d0b9c3}
+      \strng{authornamehash}{7150aa04d4646a0a7e198a9e8750b0a7}
+      \strng{authorfullhash}{6c9f2a37b66870051a81566ff0d0b9c3}
+      \strng{authorfullhashraw}{6c9f2a37b66870051a81566ff0d0b9c3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Remote Sensing}
+      \field{number}{9}
+      \field{title}{{SAR} Ship--Iceberg Discrimination in {Arctic} Conditions Using Deep Learning}
+      \field{volume}{14}
+      \field{year}{2022}
+      \field{pages}{2236}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/rs14092236
+      \endverb
+    \endentry
+    \entry{williams_macdonald_1995}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=95f9ca0841a320ed3f8654c3f22d57a9}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=58f2cb065a734e1ff49a836943bc308e}{%
+           family={MacDonald},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Perth, WA, Australia}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{2d65afb206d156cb5869f6e3d6cc13a4}
+      \strng{fullhash}{2d65afb206d156cb5869f6e3d6cc13a4}
+      \strng{fullhashraw}{2d65afb206d156cb5869f6e3d6cc13a4}
+      \strng{bibnamehash}{2d65afb206d156cb5869f6e3d6cc13a4}
+      \strng{authorbibnamehash}{2d65afb206d156cb5869f6e3d6cc13a4}
+      \strng{authornamehash}{2d65afb206d156cb5869f6e3d6cc13a4}
+      \strng{authorfullhash}{2d65afb206d156cb5869f6e3d6cc13a4}
+      \strng{authorfullhashraw}{2d65afb206d156cb5869f6e3d6cc13a4}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Third Australian and New Zealand Conference on Intelligent Information Systems ({ANZIIS})}
+      \field{title}{An Image Segmentation Technique to Infer the Outlines of Icebergs, Depicted in Satellite Images, from Their Shadows and Bright Sunlit Surfaces}
+      \field{year}{1995}
+      \verb{doi}
+      \verb 10.1109/ANZIIS.1995.705718
+      \endverb
+    \endentry
+    \entry{scheick_etal_2019}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=e707aa1ae819daabb31b4704eb2b40a6}{%
+           family={Scheick},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3164aef250aa492862ca032a463402d2}{%
+           family={Enderlin},
+           familyi={E\bibinitperiod},
+           given={E.\bibnamedelimi M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=95550e51dcc7daa87b613a481639f490}{%
+           family={Hamilton},
+           familyi={H\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{0df858ed6033bcda008120e28e92fc72}
+      \strng{fullhash}{a7d519e3357441727fdd1fe493021c46}
+      \strng{fullhashraw}{a7d519e3357441727fdd1fe493021c46}
+      \strng{bibnamehash}{a7d519e3357441727fdd1fe493021c46}
+      \strng{authorbibnamehash}{a7d519e3357441727fdd1fe493021c46}
+      \strng{authornamehash}{0df858ed6033bcda008120e28e92fc72}
+      \strng{authorfullhash}{a7d519e3357441727fdd1fe493021c46}
+      \strng{authorfullhashraw}{a7d519e3357441727fdd1fe493021c46}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Glaciology}
+      \field{number}{251}
+      \field{title}{Semi-Automated Open Water Iceberg Detection from {Landsat} Applied to {Disko Bay}, {West Greenland}}
+      \field{volume}{65}
+      \field{year}{2019}
+      \field{pages}{468\bibrangedash 480}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1017/jog.2019.23
+      \endverb
+    \endentry
+    \entry{silva_bigg_2005}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=5bcea555dfc75d24185bc8eb52414d97}{%
+           family={Silva},
+           familyi={S\bibinitperiod},
+           given={Tiago\bibnamedelimb A.\bibnamedelimi M.},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=673020e2623ec5e4921080563d548954}{%
+           family={Bigg},
+           familyi={B\bibinitperiod},
+           given={Grant\bibnamedelima R.},
+           giveni={G\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{dde935d037166e9036dd4bc639b9bbe9}
+      \strng{fullhash}{dde935d037166e9036dd4bc639b9bbe9}
+      \strng{fullhashraw}{dde935d037166e9036dd4bc639b9bbe9}
+      \strng{bibnamehash}{dde935d037166e9036dd4bc639b9bbe9}
+      \strng{authorbibnamehash}{dde935d037166e9036dd4bc639b9bbe9}
+      \strng{authornamehash}{dde935d037166e9036dd4bc639b9bbe9}
+      \strng{authorfullhash}{dde935d037166e9036dd4bc639b9bbe9}
+      \strng{authorfullhashraw}{dde935d037166e9036dd4bc639b9bbe9}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Remote Sensing of Environment}
+      \field{number}{3}
+      \field{title}{Computer-Based Identification and Tracking of {Antarctic} Icebergs in {SAR} Images}
+      \field{volume}{94}
+      \field{year}{2005}
+      \field{pages}{287\bibrangedash 297}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/j.rse.2004.10.002
+      \endverb
+    \endentry
+  \enddatalist
+  \missing{koo_etal_2021}
+\endrefsection
+\endinput
+

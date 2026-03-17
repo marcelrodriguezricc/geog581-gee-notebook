@@ -1,0 +1,192 @@
+
+% ~~~~~ SETUP ~~~~~
+
+\documentclass[11pt, letterpaper]{article}
+ 
+% ----- Packages -----
+\usepackage[utf8]{inputenc} % UTF-8 character encoding
+\usepackage[T1]{fontenc} % Better font encoding
+\usepackage[margin=1in]{geometry} % 1-inch margins
+\usepackage{setspace} % Line spacing control
+\usepackage{graphicx} % Include images
+\usepackage{hyperref} % Clickable links & references
+\usepackage{amsmath} % Math support
+\usepackage{fancyhdr} % Style
+\usepackage{setspace} % Spacing
+\usepackage{helvet}  % Helvetica
+\usepackage{titling}
+\usepackage[margin=1in]{geometry} % Margins
+
+% ----- BibLaTeX -----
+\usepackage[
+    backend=biber,
+    style=ieee,
+    sorting=none
+]{biblatex}
+\addbibresource{lit-references.bib} 
+ 
+% ------ Style -----
+\doublespacing
+\fancyhf{}
+\newcommand{\mytitle}{Iceberg Detection --- Literature Review}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\mytitle\ --- \thepage} 
+\renewcommand{\familydefault}{\sfdefault}
+
+% ----- Document Info -----
+\title{Iceberg Detection from Satellite Imagery --- A Literature Review}
+\author{Marcel Rodriguez-Riccelli}
+
+% ~~~~~ BEGIN DOCUMENT ~~~~~
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+% ----- Abstract -----
+\begin{abstract}
+
+Recent advancements in computational methods, satellite sensor capabilities, and the 
+revisit frequencies afforded by modern satellite constellations have enabled the 
+use of satellite-based remote sensing to monitor iceberg calving and motion. The 
+motivations for doing so are varied --- iceberg calving at the ice-ocean interface 
+can provide insight into the hydrodynamic and atmospheric processes driving melt; 
+iceberg tracking can help prevent collisions between icebergs and ships or marine 
+infrastructure; and iceberg motion can be used to infer ocean surface currents. 
+Icebergs can be tracked using a variety of satellite-borne sensors, including 
+multispectral optical imagers, radar altimeters, and synthetic aperture radar (SAR) 
+systems, each with distinct strengths and limitations depending on the application. 
+This review traces the development of satellite-based iceberg detection from early 
+shipborne observations and coarse-resolution scatterometer methods, through the 
+foundational SAR-based detection algorithms of the 1990s and early 2000s, to the 
+object-based and machine learning approaches enabled by modern computtional methods and higher-resolution platforms such as Envisat, RADARSAT-2, and Sentinel-1. We discuss the persistent challenges facing automated detection --- including SAR speckle noise, seasonal variability in surface backscatter, and the difficulty of discriminating icebergs from sea ice and clouds. We also examine how recent advacements in unsupervised machine learning, cloud-based processing platforms such as Google Earth Engine, and the increased data volumes afforded by modern satellite constellations are beginning to address these limitations. We conclude that while significant progress has been made, scalable and fully automated iceberg monitoring across the full range of iceberg sizes remains an open problem, and identify the integration of deep learning and data assimilation with cloud-native processing pipelines as the most promising direction for future work.
+
+\end{abstract}
+
+\section{Introduction}
+
+Icebergs are large masses of ice that have calved from a glacier or ice shelf and 
+drifted into the open ocean. As a primary mechanism for mass transfer from ice 
+sheets into the ocean, they are a major contributor to eustatic sea level rise. 
+Icebergs also drive a process known as ocean freshening, which alters thermohaline 
+circulation patterns and, in turn, influences global climate. Despite this, iceberg 
+contributions to ice sheet mass loss remain understudied, limiting the accuracy of 
+current predictive models. Understanding ice sheet mass loss is increasingly 
+important for climate policy and coastal management as rising greenhouse gas 
+concentrations continue to accelerate cryospheric melt.~\parencite{koo2021, koo2023, otosaka2023, fisser2025}
+
+Icebergs serve a pivotal role in many fields of inquiry. Beyond their role in the climate system, icebergs present direct hazards to human activity. Collisions between icebergs and ships or offshore infrastructure represent a persistent operational and safety risk. The trajectories of drifting icebergs also provide a means of inferring upper ocean circulation, as their motion integrates the effects of surface currents, winds, and waves. Icebergs are also ecologically significant, as they drift and melt, they release mineral-rich meltwater that fertilizes the surrounding ocean. The spatial and temporal distribution of this nutrient input is therefore relevant not only to physical oceanography, but to biogeochemical and ecosystem dynamics.~\parencite{long_icebergs_2002, koo2023, karvonen_etal_2021}
+
+Systematic monitoring of icebergs has historically been constrained by the 
+practical limitations of shipborne observation, which is spatially and temporally 
+sparse. ~\parencite{koo2023, long_icebergs_2002} Satellite remote sensing offers a viable means of achieving broad spatial coverage and temporal frequency required for comprehensive iceberg monitoring, and has motivated decades of research into detection and tracking methods from space --- the development of which is the subject of this review.
+
+\section{History of iceberg detection}
+
+Traditionally, data collection on icebergs had been performed from ships. One of the earliest records of systematic shipborne iceberg observation appears in the journals of Captain James Cook, documenting iceberg positions during his 1772--1775 
+circumnavigation of Antarctica aboard HMS Resolution.~\parencite{hollingshead_antarctic_icebergs} The advent of satellite remote sensing in the 1970s marked a significant shift; the Iceberg Tracking Database, maintained jointly by the U.S.\ National Ice Center and Brigham Young University, contains some of the earliest satellite-derived iceberg position tracking records, drawing on scatterometer data from the foundational Seasat mission.~\parencite{budge_long_2017} 
+
+Although short-lived, Seasat provided the basis for a succession of space-borne 
+scatterometer instruments throughout the 1990s and 2000s, including the SeaWinds Scatterometer (QSCAT) aboard the brief QuikSat satellite in 1999, the NASA Scatterometer (NSCAT) aboard a nine-month Japanese satellite mission between 1996 - 1997, and most notably the European Space Agency Scatterometer (ESCAT) onboard the ERS-1 and ERS-2 satellites between 1992 and 2000.~\parencite{long_icebergs_2002} Although scatterometers were originally designed to characterize ocean surface winds 
+from radar backscatter, they found broad additional application as iceberg tracking 
+instruments, due to the high amplitude scattering of iceberg surfaces relative to the surrounding sea-ice and surface water.~\parencite{long_icebergs_2002} The coarse spatial resolution of these scatterometers, on the order of several tens of kilometers, limited detection to only the largest icebergs.~\parencite{long_icebergs_2002} 
+
+The development of high-resolution space-borne imaging radar, exemplified by the 
+Shuttle Imaging Radar-B (SIR-B) aboard the Space Shuttle Challenger in 1984, 
+provided early insight into the potential of such technology for monitoring 
+ice mass transfer at the ice-ocean interface. \textcite{carsey_etal_1986} 
+demonstrated this potential by manually detecting large icebergs in the 
+Weddell--Scotia Sea from SIR-B imagery. Significant amounts of data collected from missions begun in the early 1990s carrying synthetic aperture radar (SAR), such as the ERS-1 and ERS-2 satellites, enabled the foundational computational iceberg detection methods of \textcite{willis_etal_1996} and \textcite{young_etal_1998}. \textcite{willis_etal_1996} developed methods for threshold based detection, reduction of speckle artifacts by averaging kernels, edge detection to define iceberg boundaries, the use of texture statistics such as pixel homogeneity as a way of further distinguishing icebergs from surrounding sea-ice and surface water. \textcite{young_etal_1998} extended these methods to extract iceberg 
+characteristics such as size and shape, though accuracy was limited by 
+seasonal effects on sea surface and iceberg backscatter conditions. 
+
+Improvements to SAR systems aboard successor platforms such as Envisat and 
+RADARSAT-1 enabled detection of increasingly smaller icebergs, with foundational 
+detection and discrimination methods developed by \textcite{power_etal_2001}, 
+\textcite{gill_2001}, and \textcite{gladstone_bigg_2002} at the turn of the 
+millennium. SAR would remain the focus of sustained improvement in both 
+instrumentation and image-processing over the subsequent two decades, with 
+RADARSAT-2 and TerraSAR-X empowering researchers in the late 2000s and early 
+2010s, and Sentinel-1 enabling unprecedentedly fine spatial resolution from the 
+mid-2010s onward. 
+
+Despite decades of progress, the ability to automatically detect and track 
+icebergs remains constrained by a range of persistent challenges. Recent 
+advancements in satellite miniaturization, cloud-based processing, and machine 
+learning, alongside improvements in parallel computation and data management, 
+offer significant potential for more accurate and scalable detection --- and 
+demand the development of tools that fully leverage them.~\parencite{koo2021}
+
+\section{Modern approaches to iceberg detection}
+
+Cloud-computing platforms designed for geospatial analysis, such as Google Earth Engine, enable large volumes of satellite data to be processed on remote servers, eliminating the need to download and store large datasets locally, and additionally reduces the computational cost barrier for smaller research groups. Google Earth Engine hosts several publicly available datasets, including Sentinel-1 SAR GRD imagery, which are updated in near-real-time, enabling timely processing and continuous automated iceberg tracking. The computational capacity of Google Earth Engine also enables the application of more complex image processing techniques and increases the volume of imagery that can be processed in a practical timeframe.~\parencite{koo2021, koo2023}
+
+Novel machine learning methods continue to push the lower bound of detectable 
+iceberg size. Unlike traditional threshold-based approaches, machine learning 
+algorithms do not require manual calibration of discrimination parameters, 
+enabling them to generalise across the variable spatial and temporal conditions 
+that typically impede fully automated processing at scale. Unsupervised 
+approaches are generally preferred over supervised methods for this application, 
+as reliably labelled training datasets are rarely available for the regions of interest. Deep learning architectures, including convolutional encoder-decoder networks, enable iceberg detection by learning complex, non-linear relationships that are not easily encoded by traditional algorithms --- \textcite{braakmann_folgmann_etal_2023} applied this approach to map the extent of giant Antarctic icebergs in Sentinel-1 imagery. Unsupervised methods have similarly demonstrated strong performance: \textcite{barbat_etal_2021} applied unsupervised machine learning to automated iceberg tracking in the Weddell Sea, while \textcite{evans_etal_2023} exploited the complementary backscatter information provided by dual-polarization SAR to detect iceberg populations embedded within complex ice-debris fields, a discrimination problem that single-channel thresholding approaches struggle to resolve.
+
+Modern detection methods build on image segmentation, the process of partitioning an image into discrete regions for analysis. Early approaches employed Constant False Alarm Rate (CFAR) detection, which computes a dynamic statistical threshold for each local region to reduce false alarms, as used by \textcite{power_etal_2001} and \textcite{gill_2001}. Later object-based methods, such as that of \textcite{mazur_amundsen_2017}, move beyond individual pixels by grouping image regions into objects characterised by brightness and shape, whose spatial properties are then passed to a classifier to discriminate icebergs from background. Hybrid approaches such as those employed in \textcite{karvonen_etal_2021} combine pixel-level and object-level segmentation, while those described in \textcite{barbat_etal_2021} and \textcite{braakmann_folgmann_etal_2023} integrate segmentation with 
+unsupervised machine learning techniques.
+
+Modern approaches to iceberg detection increasingly incorporate data assimilation, integrating observations from complementary satellite sensors to improve estimation and validation. Laser altimeter missions such as ICESat-2 and CryoSat-2 provide freeboard elevation profiles that, where their ground tracks coincide with icebergs visible in Sentinel-1 SAR imagery, enable more accurate estimation of iceberg shape and area.~\parencite{koo2021, otosaka2023} A study by \textcite{heiselberg_etal_2022} 
+demonstrates that Automatic Identification System (AIS) transponder data 
+from vessels can serve as a source of training data, 
+enabling a deep learning model to discriminate between ships and icebergs 
+in Sentinel-1 imagery --- a persistent source of false alarms that 
+traditional threshold-based methods struggle to resolve.
+
+Early attempts at iceberg detection in multispectral imagery were limited in accuracy, 
+as demonstrated b, \textcite{williams_macdonald_1995} who used Landsat 
+Multispectral Scanner imagery to infer iceberg outlines from shadow and 
+sunlit face signatures. Recent improvements in the spatial resolution of 
+multispectral sensors, combined with modern cloud-masking and classification 
+techniques, have made optical imagery a viable for iceberg 
+detection, partially overcoming the cloud cover limitations that had previously 
+confined operational monitoring to radar-based methods. \textcite{scheick_etal_2019} 
+demonstrated this by applying a machine learning cloud classifier to a 
+time-series of Landsat imagery, enabling semi-automated iceberg delineation 
+in Disko Bay, West Greenland.
+
+\section{Conclusion}
+
+Satellite-based iceberg detection has undergone a substantial transformation 
+since Seasat and the earliest radar observations of the late 1970s. What 
+began as a practice capable of tracking only the largest icebergs from coarse 
+scatterometer data has evolved into a sophisticated multi-faceted discipline, 
+at times capable of resolving individual icebergs at fine spatial scales 
+across entire ocean basins. The progression of SAR platforms from Seasat to 
+ERS-1, through RADARSAT, and to the modern Sentinel-1 constellation has 
+provided the consistent, cloud-independent backscatter imagery upon which 
+the practice has come to depend.
+
+Detection algorithms have advanced in parallel with sensor systems. 
+Segmentation approaches such as CFAR-based methods established reliable hybrid
+dynamic thresholding for open-water scenes, \parencite{karvonen_etal_2021} 
+while object-based methods addressed the challenge of heterogeneous sea-ice 
+backgrounds. \parencite{mazur_amundsen_2017, silva_bigg_2005} More recently, 
+deep learning techniques have extended these capabilities by enabling 
+automated detection free of the constraints imposed by manual intervention 
+and generalised linear thresholding. \parencite{braakmann_folgmann_etal_2023, 
+evans_etal_2023, barbat_etal_2021} The integration of auxiliary data 
+sources has also addressed long-standing false alarm problems with discriminating icebergs from other marine surface objects. \parencite{heiselberg_etal_2022}
+
+Despite this progress, significant challenges remain. Cloud cover continues 
+to limit the utility of optical methods, though advancements in automated cloud 
+masking have improved the contribution of platforms such as Landsat. 
+\parencite{scheick_etal_2019} The integration of cloud computing 
+environments such as Google Earth Engine \parencite{koo_etal_2021} and 
+complementary altimetric observations offers a path towards the scalable, 
+multi-source monitoring pipelines that operational ice services increasingly 
+require. Ultimately, sustained progress will depend on the continued 
+development of open, labelled training datasets and cross-sensor validation 
+frameworks, building on the long-term observational record that satellite 
+remote sensing has made possible. \parencite{long_icebergs_2002}
+
+% ~~~~~ REFERENCES ~~~~~
+\printbibliography
+ 
+\end{document}

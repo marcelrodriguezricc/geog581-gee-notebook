@@ -1,0 +1,210 @@
+
+% ~~~~~ SETUP ~~~~~
+
+\documentclass[11pt, letterpaper]{article}
+ 
+% ----- Packages -----
+\usepackage[utf8]{inputenc} % UTF-8 character encoding
+\usepackage[T1]{fontenc} % Better font encoding
+\usepackage[margin=1in]{geometry} % 1-inch margins
+\usepackage{setspace} % Line spacing control
+\usepackage{graphicx} % Include images
+\usepackage{hyperref} % Clickable links & references
+\usepackage{amsmath} % Math support
+\usepackage{fancyhdr} % Style
+\usepackage{setspace} % Spacing
+\usepackage{helvet}  % Helvetica
+\usepackage{titling}
+\usepackage[margin=1in]{geometry} % Margins
+
+% ----- BibLaTeX -----
+\usepackage[
+    backend=biber,
+    style=ieee,
+    sorting=none
+]{biblatex}
+\addbibresource{references.bib} 
+ 
+% ------ Style -----
+\doublespacing
+\fancyhf{}
+\newcommand{\mytitle}{icePick}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\mytitle\ --- \thepage} 
+\renewcommand{\familydefault}{\sfdefault}
+
+% ----- Document Info -----
+\title{icePick — An Experimental Tool for Iceberg Detection and Statistical Analysis}
+\author{Marcel Rodriguez-Riccelli}
+\date{\today \\[1em] \small Code: \url{https://code.earthengine.google.com/2da5c7006656509fe4e7480ce237b469}}
+
+
+% ~~~~~ BEGIN DOCUMENT ~~~~~
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% ------ Abstract -----
+\begin{abstract}
+    
+Mass loss from ice sheets has a profound effect on global climate, sea level rise, and ocean circulation patterns. Ice sheets lose mass primarily through two mechanisms --— ocean-driven melting and iceberg calving. Progress toward understanding these processes and their effects on ice-sheet melt rates is impeded by the difficulty of obtaining observational data in these environments, motivating the development of new observational approaches. Of these two mechanisms, icebergs are the focus of this study. The purpose of this work is to develop a method for automatic iceberg extraction and statistical analysis using satellite-based synthetic aperture radar (SAR) imagery.
+
+Using Google Earth Engine as the development platform, we have created an algorithm that measures and represents quantitative data on icebergs for a specified area of interest and time window. The algorithm (1) retrieves all satellite imagery from the time window as per the user's specifications; (2) prepares each image for multifaceted analysis via various image processing techniques; (3) extracts contiguous pixel clusters (hereafter referred to as ``components'') that meet user-specified criteria; (4) vectorizes each component to extract area and centroid coordinates; and (5) generates histograms and a CSV of component counts binned by area for each image and cumulatively across all images. As a case study, this work focuses on the fjord formed by Xeitl Sít’, also referred to as LeConte Glacier, the southernmost active tidewater glacier in Alaska \textit{(56.8382° N, 132.3515° W)}. Our goal is to provide a tool for experimenting with image processing and filtering techniques to establish best practices for application-focused statistical analysis of icebergs from satellite imagery.
+
+\end{abstract}
+\thispagestyle{empty}
+\setcounter{page}{0} 
+
+% ----- Body Sections -----
+\section{Introduction}
+\onehalfspacing
+ 
+\subsection{Importance of studying icebergs}
+
+In several regions around the world, ice sheets are loosing several billion tons of ice mass per year, accelerated by the rise of atmospheric greenhouse gas concentrations. Mass loss from these ice shelves have significant global implications: it is the greatest contributor to eustatic sea-level rise, and the contribution of freshwater to the ocean alters ocean circulation patterns and in turn global climate. The low elevation coastal zone --- host to over one billion people, most of the worlds mega-cities, and much of our most sensitive infrastructure --- is particularly vulnerable to these effects, and the development of policy and management planning to respond to these unprecedented changes necessitates understanding the interactions between these ice sheets and the global climate.~\parencite{sadai2025, neumann2015}
+
+Ice sheets are dynamic systems that exchange mass through coupled ice, ocean, and atmospheric processes. The primary drivers of mass loss are basal melting and iceberg calving, both of which are governed by thermohaline circulation. Warm Circumpolar Deep Water is transported to the ice-ocean interface, where it drives basal melting of floating ice shelves that extend from the grounded ice sheet over the ocean. Beneath these shelves, a suite of localized processes intensifies melt, including eddies, tidal currents, and subglacial discharge plumes. As basal melting thins the ice shelf, it loses structural integrity and iceberg calving accelerates, transferring ice mass directly to the ocean.~\parencite{rosevear2025, smith2020}
+
+Despite advancements in monitoring ice sheet dynamics, critical gaps remain in both observational data and process-level understanding of the mechanisms driving mass loss. These gaps fundamentally limit the predictive accuracy of ice sheet models, which in turn undermines confidence in long-term sea-level projections. Progress toward characterizing melt processes is impeded by the difficulty of obtaining observational data in these environments, which motivates the development of new observational approaches.~\parencite{sadai2025, neumann2015, rosevear2025, smith2020}
+
+Iceberg calving represents a particularly poorly constrained component of ice sheet mass loss modeling. Beyond its role as a primary mechanism of ice-mass transfer to the ocean, calving events release substantial potential energy, generating currents at the ice-ocean interface that accelerate basal melt --- a positive feedback that further destabilizes the ice shelf. Calving location and frequency encode information about macro-scale ocean circulation, while iceberg morphology reflects the micro-scale melt processes acting at the ice-ocean interface. Together, these properties make icebergs a valuable observational proxy for the dynamics that are otherwise difficult to measure directly.~\parencite{alley2023, shaya2025, fisser2025}
+
+
+\subsection{Iceberg detection}
+
+Icebergs are commonly monitored from three platform types: shipborne, airborne, and satellite. Proximal shipborne and airborne surveys offer direct, high-fidelity measurements, but are spatially and temporally limited and prohibitively expensive to operate. Satellite remote sensing overcomes these constraints, enabling consistent, quantitative monitoring of icebergs and calving processes at global scale over extended time periods --- without requiring access to the remote and hazardous environments at the ice-ocean interface. Several ongoing satellite missions directly support ice sheet monitoring through openly accessible datasets derived from complementary sensor types, including radar altimeters, optical and multispectral imagers, and synthetic aperture radar (SAR).~\parencite{otosaka2023, koo2021, koo2023}
+
+Iceberg detection refers to the automatic identification of icebergs in satellite imagery. Of the sensor types used in ice sheet monitoring, SAR is particularly well-suited to iceberg detection for two reasons. First, unlike radar altimeters, SAR is an imaging system --- it samples across a swath of points simultaneously, encoding the spatial structure of the scene rather than returning a single point measurement. Second, unlike passive multispectral imagers, SAR actively emits microwave radiation and records the backscattered return. Microwaves penetrate cloud cover and do not require solar illumination, making SAR effective regardless of weather or time of day --- a critical advantage in the persistently cloudy, polar-night conditions of high-latitude ice sheet environments.~\parencite{fisser2025, koo2021,  koo2023}
+
+Iceberg detection and measurement from SAR imagery presents significant challenges. Sensor factors such as spatial resolution and polarization, image artifacts such as speckle noise, and geometric factors such as incidence angle all influence data quality. Compounding these are conflicting scattering mechanisms at the ice-strewn ocean surface that complicate detection and introduce measurement error: volume and surface scattering from the irregular ice surface, specular reflection off highly smooth ice faces away from the sensor, double-bounce scattering off vertical ice walls onto the surrounding water, and Bragg scattering off wind-roughened water. Ice debris in the surrounding ocean also produces unwanted radar returns that reduce the contrast between icebergs and their environment, making the detection process more difficult.~\parencite{fisser2025, koo2021, koo2023}
+
+\subsection{Software overview and goals}
+
+We present icePick, a configurable platform for experimenting with and comparatively evaluating image processing and iceberg detection techniques in support of statistical iceberg analysis. Given the breadth of SAR processing approaches and the scene-specific nature of the challenges described above, no single configuration of filtering and detection parameters is universally optimal. icePick addresses this by allowing the user to define a region of interest and time window, and to interactively adjust the parameters of each processing and filtering sub-system --- enabling systematic comparison of outputs across configurations. The goal is for icePick to serve as a generalized experimentation framework that informs the design of more targeted, application-specific iceberg detection pipelines optimized for particular
+geographic regions, temporal scales, or downstream analysis tasks.
+
+\section{Methods}
+
+\subsection{System architecture}
+
+The icePick application was developed in Google Earth Engine's JavaScript-based browser environment as a monolithic script, in keeping with that platform's development paradigm. This structure enables straightforward sharing, native use of Google Earth Engine's server-side processing infrastructure, and simple version control. The icePick algorithm proceeds through six sequential stages: dataset
+querying, land masking, preprocessing, connected component detection, measurement retrieval, and visualization and data export. Throughout this paper we use the term ``components'' in accordance with Google Earth Engine's terminology for its server-side \textit{connectedComponents} tool, which identifies and labels spatially contiguous groups of pixels. In icePick, components represent candidate iceberg pixels that survive threshold-based masking --- that is, pixels not masked as land, open water, or other non-iceberg surfaces. The \textit{connectedComponents} function is the crux of the icePick algorithm; all other stages exist either to prepare imagery for its application or to process and export the resulting detections.
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{/Users/marcel/Desktop/geog581-gee-notebook/final/images/icepick-architecture.png}
+    \caption{A system architecture diagram of the icePick algorithm. Square blocks represent data while rounded rectangular blocks represent processes stages in gray, and contained within them individual subprocesses in black.}
+    \label{fig:sys-arch}
+\end{figure}
+
+The input dataset to icePick is the Sentinel-1 SAR Ground Range Detected (GRD) product from the European Space Agency's Copernicus Sentinel-1 mission.~\parencite{s1_grd} The GRD designation indicates that the imagery has been georeferenced and projected onto an Earth ellipsoid model, and has additionally been radiometrically calibrated and orthorectified. The dataset is collected by a constellation of two satellites carrying C-band SAR instruments, and is made openly available via Google Earth Engine. The Sentinel-1 GRD product offers 10-meter spatial resolution, 1 dB of radiometric accuracy, and a combined revisit period of 6 days across both satellites.
+
+\subsection{Dataset querying}
+
+The user first specifies a central point of interest, a radius in meters defining the region of interest, and a time window. The dataset is then filtered spatially and temporally to return only images that fully contain the region of interest and fall within the time window. Users can further filter by satellite acquisition parameters provided in the image metadata, including orbital trajectory (ascending
+or descending), which determines the look direction toward the scene; polarization, which specifies the transmitted and received orientation of the electromagnetic waves; and swath mode --- either Interferometric Wide (IW) swath, which offers finer spatial resolution over a narrower swath, or Extra Wide (EW) swath, which trades spatial resolution for broader spatial coverage. The output is the full collection of images that will be subject to iceberg detection.~\parencite{s1_grd}
+
+\subsection{Land masking}
+
+All images are clipped to the user-specified region of interest bounds to reduce computational load. Land masking combines two datasets to remove land pixels from consideration by the detection algorithm. The first is the JRC Global Surface Water Mapping Layers dataset, which maps the location and temporal distribution of global surface water derived from Landsat 5, 7, and 8 imagery.\parencite{pekel2016, jrc_gsw_2022} The user can also specify an occurrence threshold, which filters the JRC surface water dataset to retain only pixels where water is present above a user-defined percentage of the time. The second is the Global Shoreline Vector (GSV), a global polygon layer of mainland and island extents whose boundaries represent the world's coastlines.\parencite{sayre2019} These two datasets are combined into a single mask to account for the dynamic shorelines of glacial fjords likely to be targeted by this algorithm, and to exclude inland water surfaces from consideration. Optionally, the user can apply an inward buffer to the mask boundary, extending it into the water to capture any residual land pixels not removed by the base mask.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{/Users/marcel/Desktop/geog581-gee-notebook/final/images/mask-example.png}
+    \caption{Land mask applied to two different regions of interest, with the unmasked analysis area represented in blue. Left: LeConte Bay, Alaska (56.77551, -132.49348). Right: Southern Greenland Ice Sheet (60.58991, -43.63104).}
+    \label{fig:mask-eg}
+\end{figure}
+
+\subsection{Preprocessing}
+
+The preprocessing stage consists of two sub-processes that prepare the imagery for the threshold-based masking used in connected component detection. The first is a median filter, applied using Google Earth Engine's \textit{focalMedian} function. As discussed above, the median filter removes SAR speckle while preserving edges --- a consequence of the median's inherent resistance to outliers, in contrast to linear smoothing filters such as Gaussian and box blur, which rely on averaging and inevitably smear edge boundaries. The user can configure the blur radius and the shape of the kernel neighborhood.
+
+The second sub-process computes texture features using Google Earth Engine's \textit{glcmTexture} function, which derives per-pixel texture statistics from a Grey-Level Co-occurrence Matrix (GLCM). A GLCM encodes the spatial relationship between pixel values by tabulating how frequently pairs of pixels with given
+intensity values co-occur at a specified offset and direction. Two GLCM-derived statistics are appended to the dataset as additional thresholding bands for the connected component detection stage: homogeneity, which measures the similarity between neighboring pixel pairs, and entropy, which quantifies the irregularity of pixel value distributions across the neighborhood. Together, these texture features extend the detection capability beyond amplitude thresholding --- capturing the spatial structure of iceberg signatures in SAR imagery, which amplitude alone cannot discriminate.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{/Users/marcel/Desktop/geog581-gee-notebook/final/images/homogeneity-entropy.png}
+    \caption{Visualization of GLCM-generated entropy and homogeneity bands for LeConte Bay 2025/05/28, both symbolized as a multi-hue gradient spectrum where greenish-hues represent high homogeneity / low entropy and increasingly reddish hues represent low homogeneity / high entropy. Left: Entropy band. Right: Homogeneity band.}
+    \label{fig:ent-hom}
+\end{figure}
+
+\subsection{Connected component detection}
+
+The connected component detection stage isolates icebergs through a sequence of filtering and transformation steps applied both before and after the \textit{connectedComponents} function is called on each image in the collection. The first step is amplitude thresholding, which masks pixels below a specified
+backscatter intensity. This exploits a fundamental contrast in SAR backscatter between ice and water: ice and snow surfaces are highly reflective at microwave wavelengths, producing strong backscatter returns, while open water produces weak returns under calm conditions --- though wind-roughened surfaces can elevate water backscatter through Bragg scattering, which represents a key source of false detections. Mixed pixels --- those whose spatial footprint incorporates both ice and open water --- will return intermediate backscatter values that amplitude thresholding alone cannot reliably separate from true iceberg returns. This mixed-pixel effect is particularly pronounced in ice-debris fields surrounding calving fronts, where the heterogeneous mixture of brash ice, bergy bits, and open water creates a complex backscatter environment. 
+
+Additional filtering is therefore necessary to discriminate discrete icebergs from this background clutter. The GLCM-derived homogeneity and entropy bands introduced in the preprocessing stage serve precisely this role. Larger icebergs tend to present as spatially homogeneous surfaces in SAR imagery --- uniform in backscatter intensity and low in textural complexity --- whereas the surrounding ice-debris field exhibits high entropy and low homogeneity due to the heterogeneous mix of scatterers at sub-pixel scales. Thresholding on these texture bands therefore provides an additional mechanism to separate discrete iceberg surfaces from background clutter. The GLCM-derived homogeneity and entropy filtering subsystem can be optionally disabled by the user.
+
+Another optional step is available prior to connected component detection: morphological opening, which applies erosion followed by dilation to the binary mask. Erosion shrinks pixel groupings by removing their outermost pixels, while the subsequent dilation restores the size of surviving groupings. The net effect
+is the elimination of narrow pixel bridges connecting otherwise separate clusters by breaking apart elongated ice-debris chains that would otherwise be detected as single components, and reducing the likelihood of icebergs being erroneously merged with surrounding ice debris.
+
+The \textit{connectedComponents} function is then applied to all remaining pixels,
+returning an image in which each pixel is labeled with a unique index identifying
+the contiguous group to which it belongs. A user-defined size filter is then applied
+to remove components outside a specified area range, defined by minimum and maximum
+component size thresholds. Component area is computed by multiplying the pixel count
+of each component by the spatial resolution of the dataset, and should ideally be
+set to reflect the lower and upper bounds of the target iceberg size.
+
+\subsection{Measurement retrieval}
+
+Each labeled component is vectorized into a discrete polygon, producing a nested feature collection in which each sub-collection contains the vectorized components for a single input image. A nested iterative loop then traverses this structure, computing the area of each polygon using Google Earth Engine's \textit{area} function, called directly on the polygon geometry. Following area computation, an optional compactness filter scores each polygon by its shape regularity. This filter is grounded in the isoperimetric inequality: among all closed curves of a given perimeter, the circle encloses the maximum area. Any deviation from a circular shape therefore results in a reduced area-to-perimeter ratio. This ratio is normalized against that of a circle to yield a compactness score --- the isoperimetric quotient
+--- bounded between 0 and 1, where 1 denotes a perfect circle, by the formula:
+
+\begin{equation}
+    Q = \frac{4\pi A}{P^2}
+    \label{eq:isoperimetric_quotient}
+\end{equation}
+
+where $Q$ is the isoperimetric quotient, $A$ is the polygon area, and $P$ is the
+polygon perimeter. A value of $Q = 1$ corresponds to a perfect circle, with $Q$
+approaching $0$ as the shape becomes increasingly irregular. Thresholding on $Q$ provides a geometric basis for discriminating relatively compact iceberg bodies from the irregular, elongated ice-debris clusters that survive other previous filtering stages. Finally, the centroid of each iceberg is found for all polygons that survive the final filter using Google Earth Engine's \textit{centroid} function.
+
+\subsection{Output}
+
+The application outputs an interactive map displaying detected iceberg components symbolized on a yellow-to-red color gradient scaled to the user-defined area range. The user can optionally generate two histogram charts: one showing the distribution of component areas binned by date, and a cumulative chart aggregating component areas across all dates in the time window. A CSV export is also available, in which each column represents the binned area distribution for a single date, with a final column aggregating counts across all dates.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{/Users/marcel/Desktop/geog581-gee-notebook/final/images/output-example.png}
+    \caption{The output for LeConte Bay, 2025/5/22. Top Left: The raw SAR image clipped to the region of interest bounding box. Top Right: The output with icebergs highlighted and symbolized by area, on a color gradient of yellow-to-red where yellow represents smaller area and red greater. Bottom: The output histogram of binned iceberg areas.}
+    \label{fig:output-eg}
+\end{figure}
+
+ 
+\section{Discussion}
+
+\subsection{Notable outcomes}
+
+The use of SAR imagery confers several significant advantages for this application. The Sentinel-1 SAR GRD dataset provides a consistent revisit period and radiometrically stable imagery largely free from disqualifying artifacts. SAR's cloud-penetrating capability also eliminates the need to account for cloud cover --- a particularly important advantage given that clouds in multispectral imagery share both the
+spectral signature and spatial footprint of icebergs, meaning some would likely survive the amplitude, texture, and compactness filters employed in icePick. Moderate-to-large icebergs with uniform surfaces produce significantly stronger backscatter returns than surrounding open water, and under favorable acquisition conditions, amplitude thresholding alone is often sufficient to cleanly detect
+and delineate their extents. The Sentinel-1 GRD dataset also provides consistent global coverage, allowing the algorithm to be deployed anywhere within the satellite's global acquisition range. The availability of both IW and EW swath modes means that even short time windows of one week or less typically yield several images for a given region of interest.
+
+The primary challenge encountered in developing icePick was discriminating icebergs from surrounding ice-debris clusters in heavily cluttered scenes --- a problem that is particularly pronounced in the more dynamic calving environments of lower-latitude tidewater glaciers. The multi-stage filtering and transformation pipeline improved detection performance markedly, enabling icePick to isolate discrete iceberg components even in heavily cluttered scenes. The isoperimetric quotient filter proved particularly effective at rejecting large, irregular clusters of growlers and bergy bits that survived the amplitude and texture filtering stages. A key advantage of this approach is that it operates purely on component geometry --- it does not modify the spatial extent or shape of retained components, preserving the integrity of area and morphology measurements at the output stage.
+
+\subsection{Areas for improvement}
+ 
+A notable limitation of the Sentinel-1 SAR GRD dataset for this application is its spatial resolution. At 100 m\textsuperscript{2} per pixel, mean iceberg size spans only three to four pixels, leaving little margin
+for edge effects. Backscatter amplitude at iceberg margins is susceptible to irregular returns caused by mixed pixels --- where the sensor footprint straddles ice and open water --- which can erode the apparent extent of an iceberg or cause its edges to be absorbed into the surrounding water background. Even for icebergs whose interiors maintain a consistent backscatter signature, this boundary ambiguity introduces uncertainty into both detection and area estimation.
+
+This resolution constraint also limits the effectiveness of several filtering and transformation stages. For components spanning only three or four pixels, morphological opening will fully erode the component before the dilation step can restore it, eliminating valid iceberg detections entirely. The texture-based filtering also behaved contrary to expectations: we had anticipated that iceberg pixels would exhibit higher homogeneity and lower entropy than the surrounding ice-debris field, but small iceberg components --- whose bright pixels are confined to a footprint smaller than the GLCM neighborhood window --- produced highly inhomogeneous texture signatures against the low-backscatter surrounding water, inverting the expected contrast.
+
+\section{Conclusion}
+
+\subsection{Summary}
+
+This paper presented icePick, a configurable Google Earth Engine application for experimenting with and comparatively evaluating SAR-based iceberg detection and statistical analysis techniques. The tool was motivated by the need to better characterize iceberg calving processes as a means of reducing uncertainty in ice sheet mass loss models and long-term sea-level projections. The icePick system pipeline is comprised of six sequential stages: dataset querying, land masking, preprocessing, connected component detection, measurement retrieval, and visualization and data export. The thresholding and transformation processes were designed to address the challenge of isolating iceberg components from the complex SAR backscatter environment of ice-strewn polar waters. The multi-stage filtering approach, combining amplitude thresholding, GLCM-derived texture filtering, morphological opening, and isoperimetric quotient-based compactness filtering, proved effective at discriminating icebergs from surrounding in relatively clear environments, but had particular difficulty isolating icebergs in in cluttered ice-debris fields. The primary limitation of the current implementation is the spatial resolution of the Sentinel-1 GRD dataset, which constrains the reliable detection of smaller icebergs and limits the effectiveness of texture and morphological filtering for components spanning only a few pixels.
+
+\subsection{Future work}
+
+Future work will explore the integration of higher-resolution datasets and more robust edge-handling strategies to improve area estimation accuracy at iceberg margins. We also intend to migrate icePick outside of the Google Earth Engine browser environment to enable a modular codebase, cleaner separation of pipeline stages, and integration of external processing libraries. A further direction of interest is the
+application of morphological image analysis to extracted iceberg components, with the goal of characterizing iceberg shape and gleaning insights into the localized ice-ocean processes that govern their formation and evolution. Ultimately, it is our hope that icePick serves as a generalized experimentation framework that informs the design of more targeted, application-specific iceberg detection pipelines optimized for particular geographic regions, temporal scales, or downstream glaciological analysis tasks.
+
+% ~~~~~ REFERENCES ~~~~~
+\printbibliography
+ 
+\end{document}
